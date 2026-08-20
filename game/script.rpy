@@ -1,15 +1,20 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-# CHARACTERS
-define b = Character("Bianca")
+﻿# CHARACTERS
+define p = Character("Pheobe")
 define f = Character("Felix")
 define m = Character("Milo")
-define s = Character("Steph")
+define l = Character("Luka")
 define unknown = Character("???")
 
+
+# VARIABLES
+$ felixAffinity = 0
+$ miloAffinity = 0
+$ lukaAffinity = 0
+$ exorcismPoints = 0
+
+# BACKGROUNDS
+
+# SPRITES
 
 # The game starts here.
 
@@ -29,9 +34,9 @@ label start:
 
     # These display lines of dialogue.
 
-    b "You've created a new Ren'Py game."
+    p "You've created a new Ren'Py game."
 
-    b "Once you add a story, pictures, and music, you can release it to the world!"
+    p "Once you add a story, pictures, and music, you can release it to the world!"
 
     # This ends the game.
 
