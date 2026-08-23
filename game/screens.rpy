@@ -251,8 +251,8 @@ screen quick_menu():
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
+            
+            
             textbutton _("Prefs") action ShowMenu('preferences')
 
 
@@ -553,7 +553,7 @@ screen about():
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
     use game_menu(_("About"), scroll="viewport"):
-
+ 
         style_prefix "about"
 
         vbox:
@@ -666,11 +666,7 @@ screen file_slots(title):
                     textbutton _("<") action FilePagePrevious()
                     key "save_page_prev" action FilePagePrevious()
 
-                    if config.has_autosave:
-                        textbutton _("{#auto_page}A") action FilePage("auto")
-
-                    if config.has_quicksave:
-                        textbutton _("{#quick_page}Q") action FilePage("quick")
+                    
 
                     ## range(1, 10) gives the numbers from 1 to 9.
                     for page in range(1, 10):
