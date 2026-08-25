@@ -253,7 +253,7 @@ screen quick_menu():
             textbutton _("Save") action ShowMenu('save')
             
             
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Settings") action ShowMenu('settings')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -292,7 +292,7 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
+        xalign 1.0
         yalign 0.5
 
         spacing gui.navigation_spacing
@@ -309,7 +309,7 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Settings") action ShowMenu("settings")
 
         if _in_replay:
 
@@ -342,6 +342,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
+    xalign 0.5
 
 
 ## Main Menu screen ############################################################
@@ -387,7 +388,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -719,18 +720,18 @@ style slot_button_text:
     properties gui.text_properties("slot_button")
 
 
-## Preferences screen ##########################################################
+## Settings screen ##########################################################
 ##
 ## The preferences screen allows the player to configure the game to better suit
 ## themselves.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
-screen preferences():
+screen settings():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
 

@@ -4,6 +4,7 @@ define f = Character("Felix")
 define m = Character("Milo")
 define l = Character("Luka")
 define unknown = Character("???")
+define yn = Character("[name]")
 
 
 # VARIABLES
@@ -18,26 +19,29 @@ $ exorcismPoints = 0
 
 # The game starts here.
 
+label splashscreen:
+    
+
+    return 
+
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    $ name = renpy.input("what would you like to be called?")
+    $ name = name.strip()
+    if name == "":
+        $ name = "Eve"
+
+label prologue: 
 
     scene bg room
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    yn "here's some text brochacho"
 
     show eileen happy
 
-    # These display lines of dialogue.
+    yn "yo who is that???"
 
-    p "You've created a new Ren'Py game."
 
-    p "Once you add a story, pictures, and music, you can release it to the world!"
 
-    # This ends the game.
 
     return
