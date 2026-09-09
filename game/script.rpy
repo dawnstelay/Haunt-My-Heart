@@ -8,10 +8,10 @@ define yn = Character("[name]")
 
 
 # VARIABLES
-$ felixAffinity = 0
-$ miloAffinity = 0
-$ lukaAffinity = 0
-$ exorcismPoints = 0
+default felixAffinity = 0
+default miloAffinity = 0
+default lukaAffinity = 0
+default exorcismPoints = 0
 
 # BACKGROUNDS
 
@@ -21,7 +21,6 @@ $ exorcismPoints = 0
 
 label splashscreen:
     
-
     return 
 
 label start:
@@ -35,13 +34,26 @@ label prologue:
 
     scene bg room
 
-    yn "here's some text brochacho"
-
-    show eileen happy
-
-    yn "yo who is that???"
+    yn "test"
 
 
 
+label day1:
 
+label day2:
+
+
+
+    if ((felixAffinity > miloAffinity) and (felixAffinity >lukaAffinity)):
+        jump fday3
+    
+    if ((lukaAffinity > felixAffinity) and (lukaAffinity > miloAffinity)):
+        jump lday3
+
+    if ((miloAffinity > lukaAffinity) and (miloAffinity > felixAffinity)):
+        jump mday3
+
+
+    if (lukaAffinity == felixAffinity == miloAffinity):
+        jump commonRoute
     return
